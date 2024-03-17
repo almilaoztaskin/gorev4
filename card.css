@@ -1,0 +1,64 @@
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top:10px;
+    height:150px ;
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 5px;
+}
+
+.card {
+    width: 100px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #fff;
+    border-radius: 12px;
+    padding: 16px;
+    background-color:  #f7f6f9;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+.card:hover{
+    background-color:  #fff;
+}
+
+.card .fa-twitter {
+    color: #1da1f2;
+    font-size: 32px;
+  }
+.card .fa-instagram {
+    color: #c56bf2;
+    font-size: 32px;
+  }
+.card .fa-youtube {
+    color:tomato;
+    font-size: 32px;
+  }
+.card .fa-facebook-f{
+    color: dodgerblue;
+    font-size:32px;
+  }
+.card .fa-ellipsis-h {
+    margin-left: 85px;
+  }
+
+  .card .title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+  
+  .card .subtitle {
+    font-size: 12px;
+    color: gray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .clickable  {
+    cursor:pointer;
+  }
+  
+

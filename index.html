@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
+
+
+    <link rel=" stylesheet" href="nav.css">
+    <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="aside.css">
+    <link rel="stylesheet" href="card.css">
+
+
+</head>
+
+<body>
+    <nav>
+        <a href="#"><i class="fa-solid fa-eye fa-xl "></i></a>
+        <hr />
+        <ul>
+            <li>
+                <a href="#"><i class="fa-solid fa-heart-pulse fa-xl"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-satellite-dish fa-xl"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-calendar fa-xl"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-sliders fa-xl"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-regular fa-comments fa-xl"></i></a>
+            </li>
+        </ul>
+        <a href="#"><i class="fa-2x fa fa-sign-out"></i></a>
+    </nav>
+
+    <main>
+        <div class="topControls">
+            <div class="listingControls">
+                <i class="fa-solid fa-rectangle-list"></i>
+                <i class="fa-solid fa-bars" style="color: gray;"></i>
+            </div>
+            <div class="customSelect">
+                <div>
+                    <p style="font-size: 8px;">LAST 15 DAYS <i class="fa fa-caret-down"></i></p>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card clickable" id="twitter">
+                <i class="fa-brands fa-twitter"></i>
+                <span class="title">280k</span>
+                <br>
+                <span class="subtitle">Followers</span>
+                <i class="fa fa-ellipsis-h"></i>
+                </a>
+            </div>
+            <div class="card clickable" id="instagram" style="background-color:#fff;">
+                <i class="fa-brands fa-instagram"></i>
+                <span class="title">680k</span>
+                <br>
+                <span class="subtitle">Followers</span>
+                <i class="fa fa-ellipsis-h"></i>
+                </a>
+            </div>
+            <div class="card clickable" id="youtube">
+                <i class="fa-brands fa-youtube"></i>
+                <span class="title">2.3M</span>
+                <br>
+                <span class="subtitle">Followers</span>
+                <i class="fa fa-ellipsis-h"></i>
+                </a>
+            </div>
+            <div class="card clickable" id="facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span class="title">50k</span>
+                <br>
+                <span class="subtitle">Followers</span>
+                <i class="fa fa-ellipsis-h"></i>
+                </a>
+            </div>
+        </div>
+        <div class="main-container">
+            <div id="chartContainer" style="width: 570px; height: 180px;"></div>
+        </div>
+        <div class="bottom-cards">
+            <div class="card" id="bottomcard1">
+                <h3>Key Metrics</h3>
+                <br>
+                <span>Clicks</span>
+                <span>
+                    <hr>
+                </span>
+                <span>Likes</span>
+                <span>
+                    <hr>
+                </span>
+                <span>Followers</span>
+                <span>
+                    <hr>
+                </span>
+                <span>Impressions</span>
+            </div>
+
+            <div class="card" id="bottomcard2">
+                <h5>Engaged Users</h5>
+                <h1>12.2K</h1>
+                <p><i class="fa-solid fa-angles-up" style="color:aquamarine;"></i> 10% </p>
+            </div>
+
+            <div class="card" id="bottomcard3">
+                <div>
+                    <h5>Page Impressions</h5>
+                    <h1>8.6K</h1>
+                    <p><i class="fa-solid fa-angles-down" style="color: hotpink;"></i> 9%</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+        <div class="buttons">
+            <table class="buttonTable">
+                <thead>
+                    <tr>
+                        <th><i class="fa-regular fa-bell" id="bell"></i>
+                        <th><button class="buttonUpdate" type="button">
+                                <i class="fa-solid fa-gift"></i> 2 NEW UPDATES
+                            </button></th>
+                        <th><i class="fa-regular fa-user" id="person"></i></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="picContainer">
+            <img src="gorev4photo.png" alt="">
+        </div>
+        <div class="datePicker">
+            <div id="datepicker"></div>
+        </div>
+        <div class="bottomPics">
+            <img src="aside Card 1.png" alt="">
+            <img src="aside Card 2.png" alt="">
+        </div>
+
+    </aside>
+
+
+
+    <script>
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Instagram Subscribers",
+                },
+                options: {
+                    axisY: {
+                        indexLabelPlacement: "inside",
+                    },
+                },
+                title: {
+                    text: "Instagram Subscribers",
+                    fontSize: 12,
+                    horizontalAlign: "left",
+                    verticalAlign: "top",
+                    margin: 18,
+                    fontWeight: "normal",
+                    fontColor: "black"
+                },
+
+                toolTip: {
+                    shared: false,
+                    contentFormatter: function (e) {
+                        var content = "<strong>" + e.entries[0].dataPoint.label + ": " + e.entries[0].dataSeries.name + "</strong> ";
+                        content += e.entries[0].dataPoint.y;
+                        return content;
+                    }
+                },
+                data: [
+                    {
+                        type: "column",
+                        name: "Gain",
+                        color: "khaki",
+                        dataPoints: [
+                            { label: "January", y: 10 },
+                            { label: "February", y: 60 },
+                            { label: "March", y: 78 },
+                            { label: "April", y: 20 },
+                            { label: "May", y: 59 },
+                            { label: "June", y: 10 },
+                            { label: "July", y: 59 },
+                        ],
+                    },
+                    {
+                        type: "column",
+                        name: "Loss",
+                        color: "crimson",
+                        dataPoints: [
+                            { label: "January", y: -10 },
+                            { label: "February", y: -15 },
+                            { label: "March", y: -20 },
+                            { label: "April", y: -36 },
+                            { label: "May", y: -5 },
+                            { label: "June", y: -20 },
+                            { label: "July", y: -55 },
+                        ],
+                        indexLabelPlacement: "outside",
+                    },
+                ],
+            });
+            chart.render();
+        }
+
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+        $(function () {
+            $("#datepicker").datepicker({
+                dateFormat: 'yy-mm-dd',
+                minDate: new Date(2022, 1 - 1, 1),
+                maxDate: new Date(2022, 12 - 1, 31)
+            });
+        });
+    </script>
+
+</body>
+
+</html>
